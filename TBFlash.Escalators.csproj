@@ -54,7 +54,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TBFlash_Utils.cs" />
+    <Compile Include="TBFlash_Escalators_Utils.cs" />
     <Compile Include="TBFlash_Converter.cs" />
     <Compile Include="TBFlash_FastEscalator.cs" />
     <Compile Include="POConfig_TBFlash_FastEscalator.cs" />

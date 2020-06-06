@@ -7,14 +7,14 @@ using AssetManagers;
 namespace TBFlash.Escalators
 {
     [JsonConverter(typeof(TBFlash_Converter<TBFlash_FastEscalator>))]
-    public class TBFlash_FastEscalator : FloorPortal
+    public class TBFlash_FastEscalator : AgentFloorPortal
     {
-		private const float UDIR_TRAVERSAL_SPEED = 2.5f;
+		private const float UDIR_TRAVERSAL_SPEED = 3.0f;
 		private const float BDIR_TRAVERSAL_SPEED = 0.35f;
-		public SpriteRenderer light0;
-		public SpriteRenderer light1;
-		public bool isBidirectional;
-		public POConfig_Component ComponentConfig;
+		public new SpriteRenderer light0;
+		public new SpriteRenderer light1;
+		public new bool isBidirectional;
+		public new POConfig_Component ComponentConfig;
 		private LeakyTokenBucket loadBalancer;
 		private float speed;
 		private readonly LeakyTokenBucket[] tokenBuckets = new LeakyTokenBucket[2];
@@ -44,9 +44,9 @@ namespace TBFlash.Escalators
 
 		public override string Hover_OtherText()
 		{
-			if (!Debug.isDebugBuild)
-			{
-				return base.Hover_OtherText();
+			if (!TBFlash_Escalators_Utils.isTBFlashDebug)
+            {
+				return null;
 			}
 			return string.Format("Heuristic[0]: {0}\nHeuristic[2]: {1}\nTokens: {2}\nTokenBucket[0] {3}\nTokenBucket[1] {4}\n", new object[]
 			{
@@ -68,16 +68,20 @@ namespace TBFlash.Escalators
 
         public override void AwakeComponent()
         {
-            tokenBuckets[0] = new LeakyTokenBucket(3, 5);
+            /*tokenBuckets[0] = new LeakyTokenBucket(3, 5);
             tokenBuckets[1] = new LeakyTokenBucket(3, 5);
             loadBalancer = new LeakyTokenBucket(35, 10);
-            Game.current.tokenBuckets.Add(tokenBuckets[0]);
+			*/tokenBuckets[0] = new LeakyTokenBucket(9, 15);
+			tokenBuckets[1] = new LeakyTokenBucket(9, 15);
+			loadBalancer = new LeakyTokenBucket(100, 30);
+
+			Game.current.tokenBuckets.Add(tokenBuckets[0]);
             Game.current.tokenBuckets.Add(tokenBuckets[1]);
             Game.current.tokenBuckets.Add(loadBalancer);
             speed = TraversalSpeed;
-            base.AwakeComponent();
+			base.AwakeComponent();
 
-            TBFlash_Utils.TBFlashLogger(Log.FromPool("").WithCodepoint());
+            TBFlash_Escalators_Utils.TBFlashLogger(Log.FromPool("").WithCodepoint());
 
             GameObject go0 = new GameObject("light0go");
             light0 = go0.AddComponent<SpriteRenderer>();
@@ -128,23 +132,26 @@ namespace TBFlash.Escalators
             }
         }
 
-		protected void OnDestroy()
+		protected new void OnDestroy()
 		{
 			if (Game.isQuitting)
 			{
 				return;
 			}
+            Destroy(light0);
+			Destroy(light1);
 			Game.current.tokenBuckets.Remove(tokenBuckets[0]);
 			Game.current.tokenBuckets.Remove(tokenBuckets[1]);
 			Game.current.tokenBuckets.Remove(loadBalancer);
+			base.OnDestroy();
 		}
 
-		public bool IsEntry(Cell cell)
+		public new bool IsEntry(Cell cell)
 		{
 			return (currentDir == FloorPortal.CurrentDir.BiDirectional && (CompareCell(OnFootprint_Edge0, cell) || CompareCell(OnFootprint_Edge1, cell))) || (currentDir == FloorPortal.CurrentDir.One_To_Zero && CompareCell(OnFootprint_Edge1, cell)) || (currentDir == FloorPortal.CurrentDir.Zero_To_One && CompareCell(OnFootprint_Edge0, cell));
 		}
 
-		public bool IsEnd(Cell cell)
+		public new bool IsEnd(Cell cell)
 		{
 			return (currentDir == FloorPortal.CurrentDir.BiDirectional && (CompareCell(OnFootprint_Edge0, cell) || CompareCell(OnFootprint_Edge1, cell))) || (currentDir == FloorPortal.CurrentDir.One_To_Zero && CompareCell(OnFootprint_Edge0, cell)) || (currentDir == FloorPortal.CurrentDir.Zero_To_One && CompareCell(OnFootprint_Edge1, cell));
 		}
@@ -159,14 +166,17 @@ namespace TBFlash.Escalators
 			{
 				return OFF_Footprint_Edge0[0];
 			}
-			return base.RescuePosition();
+			if (OFF_Footprint_Edge0[0].isPendingConstruction && !OFF_Footprint_Edge1[0].isPendingConstruction)
+			{
+				return OFF_Footprint_Edge1[0];
+			}
+			return OFF_Footprint_Edge0[0];
 		}
 
 		protected override void OnPlacement()
 		{
 			base.OnPlacement();
 			placeableObj.prefab.iprefab.i18nNameKey = "TBFlash.FastEscalator.generic.name";
-			TBFlash_Utils.TBFlashLogger(Log.FromPool("").WithCodepoint());
 			if (light0 != null && light1 != null)
 			{
 				SetupColoredLights();
@@ -175,7 +185,7 @@ namespace TBFlash.Escalators
 
 		public override void SetDirection(FloorPortal.CurrentDir dir)
 		{
-			TBFlash_Utils.TBFlashLogger(Log.FromPool("").WithCodepoint());
+			TBFlash_Escalators_Utils.TBFlashLogger(Log.FromPool("").WithCodepoint());
 			if (isBidirectional)
 			{
 				dir = FloorPortal.CurrentDir.BiDirectional;
@@ -186,11 +196,10 @@ namespace TBFlash.Escalators
 
 		private void SetupLightColors(bool flip)
 		{
-			TBFlash_Utils.TBFlashLogger(Log.FromPool("").WithCodepoint());
+			TBFlash_Escalators_Utils.TBFlashLogger(Log.FromPool("").WithCodepoint());
 			if (light0 == null || light1 == null)
 			{
-				TBFlash_Utils.TBFlashLogger(Log.FromPool("").WithCodepoint());
-				return;
+                return;
 			}
 			if (flip)
 			{

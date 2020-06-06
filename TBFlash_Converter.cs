@@ -12,7 +12,7 @@ namespace TBFlash.Escalators
 		public TBFlash_Converter()
 		{
 			usingType = typeof(T);
-			TBFlash_Utils.TBFlashLogger(Log.FromPool($"Created TBFlash_Converter of Type: {usingType}").WithCodepoint());
+			TBFlash_Escalators_Utils.TBFlashLogger(Log.FromPool($"Created TBFlash_Converter of Type: {usingType}").WithCodepoint());
 		}
 
 		public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
@@ -50,7 +50,7 @@ namespace TBFlash.Escalators
 			IPrefab prefab = GUID.Fetch(int.Parse(text));
 			if (prefab == null)
 			{
-				TBFlash_Utils.TBFlashLogger(Log.FromPool(string.Format("GUID.Fetch {0} was NULL // NOT FOUND", text)).WithCodepoint());
+				TBFlash_Escalators_Utils.TBFlashLogger(Log.FromPool(string.Format("GUID.Fetch {0} was NULL // NOT FOUND", text)).WithCodepoint());
 				return null;
 			}
 			if (prefab.zone != null)
@@ -70,11 +70,11 @@ namespace TBFlash.Escalators
 				Component component = prefab.prefab.gameObject.GetComponent(usingType);
 				if (component == null)
 				{
-					TBFlash_Utils.TBFlashLogger(Log.FromPool("NULL GetComponent<T> Lookup").WithCodepoint());
+					TBFlash_Escalators_Utils.TBFlashLogger(Log.FromPool("NULL GetComponent<T> Lookup").WithCodepoint());
 				}
 				return component;
 			}
-			TBFlash_Utils.TBFlashLogger(Log.FromPool("NULL GetComponent<T> Lookup").WithCodepoint());
+			TBFlash_Escalators_Utils.TBFlashLogger(Log.FromPool("NULL GetComponent<T> Lookup").WithCodepoint());
 			return null;
 		}
 

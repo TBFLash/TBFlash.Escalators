@@ -5,7 +5,7 @@ namespace TBFlash.FastEscalator
 {
     public class Mod : BaseMod
     {
-        public override string Name => "TBFlash.FastEscalator";
+        public override string Name => "Fast Escalators";
 
         public override string InternalName => "TBFlash.FastEscalator";
 

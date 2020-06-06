@@ -2,9 +2,9 @@
 
 namespace TBFlash.Escalators
 {
-    internal static class TBFlash_Utils
+    internal static class TBFlash_Escalators_Utils
     {
-		private const bool isTBFlashDebug = false;
+		internal const bool isTBFlashDebug = false;
 
 		internal static void TBFlashLogger(Log log)
 		{
