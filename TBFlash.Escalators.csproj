@@ -7,11 +7,12 @@
     <ProjectGuid>{BAF94646-3B94-4E57-98C2-CC1854F9B189}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TBFlash.LongEscalator</RootNamespace>
-    <AssemblyName>SimAirport Script Mod</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <RootNamespace>TBFlash.Escalators</RootNamespace>
+    <AssemblyName>TBFlash.Escalators</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -53,15 +54,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TBFlash_Utils.cs" />
+    <Compile Include="TBFlash_Converter.cs" />
+    <Compile Include="TBFlash_FastEscalator.cs" />
+    <Compile Include="POConfig_TBFlash_FastEscalator.cs" />
     <Compile Include="Mod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="i18n\" />
     <Folder Include="textures\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="placeables\TBFlash.LongEscalator.json" />
+    <None Include="placeables\TBFlash.FastEscalator.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="i18n\en.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

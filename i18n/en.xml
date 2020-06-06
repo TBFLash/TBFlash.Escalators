@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TBFlash>
+	<FastEscalator>
+		<generic>
+			<name>Fast Escalator</name>
+			<description>An electronic escalator that allows your passengers to travel between two floors.  Only allows travel in one direction.</description>
+		</generic>
+		<Up>
+			<name>Fast Escalator Up</name>
+			<description>An electronic escalator that allows your passengers to travel between two floors.  Only allows travel in one direction.</description>
+		</Up>
+		<Down>
+			<name>Fast Escalator Down</name>
+			<description>An electronic escalator that allows your passengers to travel between two floors.  Only allows travel in one direction.</description>
+		</Down>
+	</FastEscalator>
+	<LongEscalator>
+		<generic>
+			<name>Long Escalator</name>
+			<description>An electronic escalator that allows your passengers to travel between two floors.  Only allows travel in one direction.</description>
+		</generic>
+		<Up>
+			<name>Long Escalator Up</name>
+			<description>An electronic escalator that allows your passengers to travel between two floors.  Only allows travel in one direction.</description>
+		</Up>
+		<Down>
+			<name>Long Escalator Down</name>
+			<description>An electronic escalator that allows your passengers to travel between two floors.  Only allows travel in one direction.</description>
+		</Down>
+	</LongEscalator>
+</TBFlash>

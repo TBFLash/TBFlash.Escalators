@@ -1,0 +1,426 @@
+﻿{
+	"ComponentConfigData": [
+		{
+			"$type": "TBFlash.Escalators.POConfig_TBFlash_FastEscalator, TBFlash.Escalators",
+			"name": "TBFlash_FastEscalator",
+			"isBidirectional": false,
+			"ComponentConfig": null,
+			"PLACEMENT_OFFSET": 0
+		}
+	],
+	"BlockedBy": [0, 1, 2],
+	"bWriteToMapCache": true,
+	"constructionDuration": 2000.0,
+	"constructionType": 1,
+	"CreatePrice": -60000,
+	"DisplayCategories": [40],
+	"height": 3,
+	"Hidden": false,
+	"HourlyPrice": 0.0,
+	"HourlyPriceCategory": 2,
+	"InvariantMdel": true,
+	"_i18nDescKey": "TBFlash.FastEscalator.Up.description",
+	"_i18nNameKey": "TBFlash.FastEscalator.Up.name",
+	"isDestroyable": true,
+	"isPseudoWall": false,
+	"Maintainable_MTBF": -1,
+	"MaxAllowed": -1,
+	"name": "FastEscalator",
+	"path": "TBFlash/FastEscalator",
+	"PlacementSound": 1,
+	"Properties": [1],
+	"requiredAdministrators": [],
+	"RequiredLevels": [34],
+	"RequiresGameObject": true,
+	"requiresSectorRebuild": true,
+	"requiresSecureArea": false,
+	"rotateType": 1,
+	"ShouldDezone": 3,
+	"snapToGridSize": 1,
+	"StaffRequired": 0,
+	"width": 2,
+	"backFacing":{
+		"enabled": true,
+		"markers": [
+			{
+				"blocksConstruction": true,
+				"receiverType": 3,
+				"RelativeLevel": 0,
+				"rotateEnabled": false,
+				"tag": "pt1",
+				"position": {
+					"x": 0.6654663,
+					"y": 3.199722
+				},
+				"orientation": {
+					"x": 0.0,
+					"y": 0.0
+				}
+			},
+			{
+				"blocksConstruction": false,
+				"receiverType": 3,
+				"RelativeLevel": 0,
+				"rotateEnabled": false,
+				"tag": "pt2",
+				"position": {
+					"x": 1.038971,
+					"y": 1.77
+				},
+				"orientation": {
+					"x": 0.0,
+					"y": 0.0
+				}
+			},
+			{
+				"blocksConstruction": false,
+				"receiverType": 3,
+				"RelativeLevel": 0,
+				"rotateEnabled": false,
+				"tag": "pt3",
+				"position": {
+					"x": 0.9926147,
+					"y": 1.2
+				},
+				"orientation": {
+					"x": 0.0,
+					"y": 0.0
+				}
+			},
+			{
+				"blocksConstruction": true,
+				"receiverType": 3,
+				"RelativeLevel": 1,
+				"rotateEnabled": false,
+				"tag": "pt4",
+				"position": {
+					"x": 1.210175,
+					"y": -0.2450485
+				},
+				"orientation": {
+					"x": 0.0,
+					"y": 0.0
+				}
+			},
+			{
+				"blocksConstruction": false,
+				"receiverType": 3,
+				"RelativeLevel": 0,
+				"rotateEnabled": false,
+				"tag": "light1",
+				"position": {
+					"x": 1.016113,
+					"y": 2.743668
+				},
+				"orientation": {
+					"x": 0.0,
+					"y": 0.0
+				}
+			},
+			{
+				"blocksConstruction": false,
+				"receiverType": 3,
+				"RelativeLevel": 0,
+				"rotateEnabled": false,
+				"tag": "light2",
+				"position": {
+					"x": 0.9674683,
+					"y": 0.3226089
+				},
+				"orientation": {
+					"x": 0.0,
+					"y": 0.0
+				}
+			}
+		],
+		"sprites": [
+			{
+				"localPosition": {
+					"x": 0.0,
+					"y": 0.0
+				},
+				"localRotation": 0.0,
+				"relativeLevel": 0,
+				"sortingOrder": -2.99,
+				"sprite": "Escalator_Back_Bottom"
+			},
+			{
+				"localPosition": {
+					"x": 0.0,
+					"y": 0.0
+				},
+				"localRotation": 0.0,
+				"relativeLevel": 0,
+				"sortingOrder": -2.17,
+				"sprite": "Escalator_Back_Top"
+			}
+		]
+	},
+	"frontFacing":{
+		"enabled": true,
+		"markers": [
+			{
+				"blocksConstruction": true,
+				"receiverType": 3,
+				"RelativeLevel": 0,
+				"rotateEnabled": false,
+				"tag": "pt1",
+				"position": {
+					"x": 1.179413,
+					"y": -0.25
+				},
+				"orientation": {
+					"x": 0.0,
+					"y": 0.0
+				}
+			},
+			{
+				"blocksConstruction": false,
+				"receiverType": 3,
+				"RelativeLevel": 0,
+				"rotateEnabled": false,
+				"tag": "pt2",
+				"position": {
+					"x": 1.02597,
+					"y": 2.94
+				},
+				"orientation": {
+					"x": 0.0,
+					"y": 0.0
+				}
+			},
+			{
+				"blocksConstruction": false,
+				"receiverType": 3,
+				"RelativeLevel": 0,
+				"rotateEnabled": false,
+				"tag": "pt3",
+				"position": {
+					"x": 1.016937,
+					"y": 0.4
+				},
+				"orientation": {
+					"x": 0.0,
+					"y": 0.0
+				}
+			},
+			{
+				"blocksConstruction": true,
+				"receiverType": 3,
+				"RelativeLevel": 1,
+				"rotateEnabled": false,
+				"tag": "pt4",
+				"position": {
+					"x": 0.7295532,
+					"y": 3.232399
+				},
+				"orientation": {
+					"x": 0.0,
+					"y": 0.0
+				}
+			},
+			{
+				"blocksConstruction": false,
+				"receiverType": 3,
+				"RelativeLevel": 0,
+				"rotateEnabled": false,
+				"tag": "light1",
+				"position": {
+					"x": 0.98703,
+					"y": 0.5046692
+				},
+				"orientation": {
+					"x": 0.0,
+					"y": 0.0
+				}
+			},
+			{
+				"blocksConstruction": false,
+				"receiverType": 3,
+				"RelativeLevel": 0,
+				"rotateEnabled": false,
+				"tag": "light2",
+				"position": {
+					"x": 1.005829,
+					"y": 2.13089
+				},
+				"orientation": {
+					"x": 0.0,
+					"y": 0.0
+				}
+			}
+		],
+		"sprites": [
+			{
+				"localPosition": {
+					"x": 0.0,
+					"y": 0.0
+				},
+				"localRotation": 0.0,
+				"relativeLevel": 0,
+				"sortingOrder": -2.99,
+				"sprite": "Escalator_Front_Bottom"
+			},
+			{
+				"localPosition": {
+					"x": 0.0,
+					"y": 0.0
+				},
+				"localRotation": 0.0,
+				"relativeLevel": 0,
+				"sortingOrder": -2.55,
+				"sprite": "Escalator_Front_Top"
+			},
+			{
+				"localPosition": {
+					"x": 0.0,
+					"y": 0.0
+				},
+				"localRotation": 0.0,
+				"relativeLevel": 0,
+				"sortingOrder": 0,
+				"sprite": "Escalator_Front_Top_Occluder"
+			}
+		]
+	},
+	"leftFacing":{
+		"enabled": true,
+		"markers": [
+			{
+				"blocksConstruction": true,
+				"receiverType": 3,
+				"RelativeLevel": 0,
+				"rotateEnabled": false,
+				"tag": "pt1",
+				"position": {
+					"x": -0.2180481,
+					"y": 0.7345581
+				},
+				"orientation": {
+					"x": 0.0,
+					"y": 0.0
+				}
+			},
+			{
+				"blocksConstruction": false,
+				"receiverType": 3,
+				"RelativeLevel": 0,
+				"rotateEnabled": false,
+				"tag": "pt2",
+				"position": {
+					"x": 2.38,
+					"y": 1.8
+				},
+				"orientation": {
+					"x": 0.0,
+					"y": 0.0
+				}
+			},
+			{
+				"blocksConstruction": false,
+				"receiverType": 3,
+				"RelativeLevel": 0,
+				"rotateEnabled": false,
+				"tag": "pt3",
+				"position": {
+					"x": 0.95,
+					"y": 0.31
+				},
+				"orientation": {
+					"x": 0.0,
+					"y": 0.0
+				}
+			},
+			{
+				"blocksConstruction": true,
+				"receiverType": 3,
+				"RelativeLevel": 1,
+				"rotateEnabled": false,
+				"tag": "pt4",
+				"position": {
+					"x": 3.263611,
+					"y": 1.250626
+				},
+				"orientation": {
+					"x": 0.0,
+					"y": 0.0
+				}
+			},
+			{
+				"blocksConstruction": false,
+				"receiverType": 3,
+				"RelativeLevel": 0,
+				"rotateEnabled": false,
+				"tag": "light1",
+				"position": {
+					"x": 0.518219,
+					"y": 0.7724686
+				},
+				"orientation": {
+					"x": 0.0,
+					"y": 0.0
+				}
+			},
+			{
+				"blocksConstruction": false,
+				"receiverType": 3,
+				"RelativeLevel": 0,
+				"rotateEnabled": false,
+				"tag": "light2",
+				"position": {
+					"x": 2.393066,
+					"y": 0.8010559
+				},
+				"orientation": {
+					"x": 0.0,
+					"y": 0.0
+				}
+			}
+		],
+		"sprites": [
+			{
+				"localPosition": {
+					"x": 0.0,
+					"y": 0.0
+				},
+				"localRotation": 0.0,
+				"relativeLevel": 0,
+				"sortingOrder": -1.99,
+				"sprite": "Escalator_Left_Bottom"
+			},
+			{
+				"localPosition": {
+					"x": 0.0,
+					"y": 0.0
+				},
+				"localRotation": 0.0,
+				"relativeLevel": 0,
+				"sortingOrder": -1.5,
+				"sprite": "Escalator_Left_Top"
+			},
+			{
+				"localPosition": {
+					"x": 0.0,
+					"y": 0.0
+				},
+				"localRotation": 0.0,
+				"relativeLevel": 0,
+				"sortingOrder": 0,
+				"sprite": "Escalator_Left_Bottom_Occluder"
+			},
+			{
+				"localPosition": {
+					"x": 0.0,
+					"y": 0.0
+				},
+				"localRotation": 0.0,
+				"relativeLevel": 0,
+				"sortingOrder": 0,
+				"sprite": "Escalator_Left_Top_Occluder"
+			}
+		]
+	},
+	"rightFacing":{
+		"enabled": true,
+	}
+}
